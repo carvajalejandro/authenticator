@@ -1,9 +1,9 @@
 users= [
     {username: "alex" , password: "alex"},
+    {username: "ellie" , password: "ellie"},
+    {username: "morgan" , password: "morgan"},
 ]
-
 puts "Welcome to the Authenticator"
-25.times {print "-"}
 puts "This program will take input from the user and compare to the credentials"
 puts "If authentication is successful, the user object will be displayed"
 
@@ -16,8 +16,10 @@ while attempts <4
     users.each do |user|
         if user[:username]==username && user[:password]==password
             puts user
+            break
         else 
             puts "Invalid Email/Passord"
+            break
         end
     end
     puts "Press n to quit or any other key to continue:"
