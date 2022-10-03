@@ -1,6 +1,5 @@
 users= [
     {username: "alex" , password: "alex"},
-    {username: "ellie" , password: "ellie"}
 ]
 
 puts "Welcome to the Authenticator"
