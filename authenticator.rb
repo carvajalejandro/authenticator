@@ -3,7 +3,16 @@ users= [
     {username: "ellie" , password: "ellie"},
     {username: "morgan" , password: "morgan"},
 ]
-puts "Welcome to the Authenticator"
+
+def auth_user(username, password, list_of_users)
+    list_of_users.each do|user_record|
+        if user_record[:username]==username && user_record[:password]==password
+            return user_record    
+        end
+    end
+    "Invalid Email/Password!"
+end
+puts "Welcome to the Authenticator!"
 puts "This program will take input from the user and compare to the credentials"
 puts "If authentication is successful, the user object will be displayed"
 
@@ -13,18 +22,12 @@ while attempts <4
     username= gets.chomp 
     print "Password: "
     password= gets.chomp
-    users.each do |user|
-        if user[:username]==username && user[:password]==password
-            puts user
-            break
-        else 
-            puts "Invalid Email/Password!"
-            break
-        end
-    end
+    authentication = auth_user(username, password, users)
+    puts authentication
     puts "Press n to quit or any other key to continue:"
     input= gets.chomp.downcase
     break if input=="n"
-    p attempts+=1
+    attempts+=1
 end
+puts "You have exceeded the number of attempts" if attempts==4
 
