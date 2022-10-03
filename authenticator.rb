@@ -7,7 +7,7 @@ puts "Welcome to the Authenticator"
 puts "This program will take input from the user and compare to the credentials"
 puts "If authentication is successful, the user object will be displayed"
 
-p attempts= 1
+attempts= 1
 while attempts <4
     print "Username: "
     username= gets.chomp 
@@ -18,7 +18,7 @@ while attempts <4
             puts user
             break
         else 
-            puts "Invalid Email/Passord"
+            puts "Invalid Email/Password!"
             break
         end
     end
